@@ -41,10 +41,10 @@ As dúvidas foram simples, apenas precisei de maior guiação sobre destacar os 
 
 ### Bibliotecas
 Instalar usando CMD(Com permissões de administrador) após a instalação do interpretador Python. 
-`pip install numpy
-pip install sounddevice
-pip install matplotlib
-pip install opencv-python`
+`pip install numpy`
+`pip install sounddevice`
+`pip install matplotlib`
+`pip install opencv-python`
 
 ## Obtenção dos valores de tempo para a média, e formatação da média
 Após a finalização de um pico, o tempo que é a váriavel `tempo` na qual armazena os segundos, é gravado em uma lista chamada `ListaTempoPicos` que após a finalização da execução do script são tratados na função `calcular_media()`. Na qual é criada uma cópia da lista
