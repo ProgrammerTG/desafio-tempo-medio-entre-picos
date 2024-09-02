@@ -88,10 +88,12 @@ Cálculo: Leitura Atual - Anterior = 15 | Leitura Anterior - Antepenúltima Leit
 
 2-Se passado na verificação para detecta se não é um ritmo constante, é verificado se o valor anterior da leitura atual é maior que 50, na qual seria considerado um pico. Se for, é subtraido a leitura atual com a anterior, para ver se há uma distância de no mínimo 15 pontos. Para evitar falsos positivos por exemplo:
 52, 50, 51 assim percebendo que ainda está oscilando e não recriando um pico.
+
 ![image](https://github.com/user-attachments/assets/6886d299-b423-4624-91c0-19363139e229)
 
 
 3-Se a verificação 2 for negativa, é apenas indicado que é um pico, e começa a coleta de dados sobre o pico.
+
 ![image](https://github.com/user-attachments/assets/2f75d974-0f2f-4e4c-9255-4a692ceefd3a)
 
 
@@ -104,6 +106,7 @@ O maior valor(o pico) sempre será o valor número 0 do dicionário.
 ### Verificação 1
 É utilizado para detectar se houve o fim do pico, caso não, seja incrementado valores no dicionário do pico.
 1-É verificado se o valor de leitura atual, é menor que 50, ou há uma distância de 20 ou mais pontos pra baixo, da leitura máxima do pico. Se alguma das duas verificaçõs do IF estiverem correta, vai ocorrer outra verificação para finalizar o pico. Sendo ela a verificação **1A**
+
 ![image](https://github.com/user-attachments/assets/f894283b-a5a9-4027-8439-fd1ddedfb17c)
 
 
@@ -111,6 +114,7 @@ O maior valor(o pico) sempre será o valor número 0 do dicionário.
 1-É feito uma verificação na lista que armazena todos valores de um pico. Já que o pico pode ter uma oscilação grande para após isso descer, o dicionário que armazena os valores do pico não tem um tamanho fixo. Porém a verificação é feita de forma dinâmica, utilizando a seguinte lógica:
 Após a verificação 1 tenha sido afirmativa, é feito uma verificação em todo o dicionário do Pico, usando **for index, valor in DetectorPicos.items()** e utilizando a variável `Positivos`. O for terá a verificação para verificar que os valores após o valor inicial(O 0 do dicionário que seria o pico)
 seja menor que o pico, ou menor que 50. Se sim o positivo é acrescentado mais um ponto, para que após da verificação total da lista, seja feito a seguinte verificação **if Positivos == (len(DetectorPicos - 1)):** na qual se for afirmativa, o pico será finalizado e armazenado.
+
 ![image](https://github.com/user-attachments/assets/9e07f5fa-e16e-4f9b-a6af-88d4fb7a6a66)
 
 
@@ -122,16 +126,19 @@ Caso a verificação 1 seja negativa, será feita agora cálculos para adição 
 1-É feito um cálculo para a detectação de outro grande pico, utilizando a lógica de que se a metade do valor da leitura atual seja maior que o valor da leitura anterior, seja detectado que houve outro grande pico, podendo usar o seguinte exemplo:
 Leituras: 0,55, 46, 100
 Nessa leitura, houve um grande pico no 59, porém após a possível queda dele, houve outro grande pico, sendo assim 2 grandes picos consideráveis. Porém se a leitura fosse [0,55,50,100] não seria dois grandes picos, já que não desceu o suficiente para fazer outro grande pico, sendo assim só seria contabilizado um pico.
+
 ![image](https://github.com/user-attachments/assets/52d79c17-ee00-4b48-b28a-b1463e19a9f3)
 
 
 ### Verificação 2B 
 Caso o valor da leitura atual seja maior que a do pico, então o pico ainda não acabou, assim o dicionário é limpo e a leitura se reinicia com o valor da leitura atual sendo o pico.
+
 ![image](https://github.com/user-attachments/assets/b75fb70f-0884-44cd-a6a5-51c7b85b0e5e)
 
 
 ### Verificação 2C
 Caso as verificações 2A e 2B sejam negativas, a verificação atual apenas colocará o valor da leitura atual no dicionário do Pico, já que não é maior que o pico e nem tem um grande intervalo.
+
 ![image](https://github.com/user-attachments/assets/21316466-2a77-4dd6-899e-d9943c176f2b)
 
 
