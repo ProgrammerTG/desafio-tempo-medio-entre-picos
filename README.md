@@ -9,9 +9,6 @@ Bem-vindo ao desafio TMEP: desafio Tempo Médio Entre Picos!
 
 O desafio TMEP é um desafio de programação que tem como objetivo incentivar o raciocínio lógico e algoritmico!
 
-# URL da vaga
-https://br.indeed.com/job/pessoa-apaixonada-por-programar-computadores-junior-f3fb46c5b03bd952
-
 # Regras
 
 - Fork esse repositório.
